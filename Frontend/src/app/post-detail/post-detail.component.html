@@ -1,0 +1,5 @@
+<div *ngIf="Post; else elseBlock">
+    <h2>{{Post.title}}</h2>
+    <h3>{{Post.description}}</h3>
+</div>
+<ng-template #elseBlock>Loading...</ng-template>
