@@ -23,7 +23,6 @@ export class PostComponent implements OnInit {
   ngOnInit(): void 
   {
     this.GetPosts();
-    console.log("Lekker loggen");
   }
 
 }

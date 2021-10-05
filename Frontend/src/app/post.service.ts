@@ -22,7 +22,6 @@ export class PostService {
 
   GetPostById(id: number): Observable<Post>
   {
-    console.log(id);
     return this.http.get<Post>(`${this.postByIdUrl}/${id}`);
   }
 
