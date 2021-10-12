@@ -16,6 +16,7 @@ export class PostDetailComponent implements OnInit {
   GetPost(): void
   {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    
     this.postService.GetPostById(id)
               .subscribe(post => this.Post = post);
   }

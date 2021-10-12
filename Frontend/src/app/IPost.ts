@@ -1,8 +1,9 @@
 export interface Post
 {
-    id: Number;
+    id: number;
     title: string;
     description: string;
+    link: string;
 }
 
 
