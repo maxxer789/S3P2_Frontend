@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from './IPost';
+import { Post } from '../IPost';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +10,14 @@ import { Post } from './IPost';
 
 export class PostService {
 
-  private readonly apiUrl = "https://localhost:44316/";
-
-  private postUrl = this.apiUrl + "post/all";
+  private postUrl = environment.url + "post/all";
 
   GetPosts(): Observable<Post[]>
   {
     return this.http.get<Post[]>(this.postUrl);
   }
 
-  private postByIdUrl = this.apiUrl + "post";
+  private postByIdUrl = environment.url + "post";
 
   GetPostById(id: number): Observable<Post>
   {
