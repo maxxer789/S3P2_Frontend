@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { MessagingComponent } from './messaging/messaging.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,
