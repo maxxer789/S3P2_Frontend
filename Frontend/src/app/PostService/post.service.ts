@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 
 export class PostService {
 
-  private postUrl = environment.url + "post/all";
+  private postUrl = environment.url + "posts";
 
   GetPosts(): Observable<Post[]>
   {
