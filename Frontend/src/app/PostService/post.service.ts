@@ -10,19 +10,20 @@ import { environment } from 'src/environments/environment';
 
 export class PostService {
 
-  private postUrl = environment.url + "posts";
+  constructor(private http: HttpClient) { }
 
-  GetPosts(): Observable<Post[]>
+  private postUrl = environment.postUrl + "posts";
+
+  public GetPosts(): Observable<Post[]>
   {
     return this.http.get<Post[]>(this.postUrl);
   }
 
-  private postByIdUrl = environment.url + "post";
+  private postByIdUrl = environment.postUrl + "post";
 
-  GetPostById(id: number): Observable<Post>
+  public GetPostById(id: number): Observable<Post>
   {
     return this.http.get<Post>(`${this.postByIdUrl}/${id}`);
   }
 
-  constructor(private http: HttpClient) { }
 }
