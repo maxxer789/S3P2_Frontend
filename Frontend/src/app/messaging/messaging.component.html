@@ -1,4 +1,22 @@
-
 <div class="bg-primary">
-    {{message}}
+    {{signalRService.lastMessage}}
 </div>
+<form class="form-signin" #groupForm="ngForm" (ngSubmit)="joinGroup(groupForm)">
+    <div class="container-fluid">
+        <label for="groupName" class="sr-only">GroupName</label>
+        <input type="text" id="groupName" name="groupName" ngModel class="form-control" placeholder="Group Name" required autofocus>
+        <br>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </div>
+</form>
+<form class="form-signin" #sendMessageForm="ngForm" (ngSubmit)="sendMessageToGroup(sendMessageForm)">
+    <div class="container-fluid">
+        <label for="message" class="sr-only"></label>
+        <input type="text" id="message" name="message" ngModel class="form-control" placeholder="text here">
+        <br>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </div>
+</form>
+

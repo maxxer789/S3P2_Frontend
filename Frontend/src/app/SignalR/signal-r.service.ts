@@ -12,10 +12,10 @@ export class SignalRService {
 
   hubConnection?:signalR.HubConnection;
 
-  startConnection = () => 
+  public startConnection = () => 
   {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5000/Messages', {
+      .withUrl('https://localhost:5002/Messages', {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
       }).build();
@@ -27,21 +27,31 @@ export class SignalRService {
         .catch(err => console.log("Something went wrong: " + err));
   }
 
-  askServer()
+  public askServer()
   {
     this.hubConnection?.invoke("askServer", "hey")
     .catch(err => console.error(err));
   }
 
-  addMessageListener()
+  public addMessageListener()
   {
-    this.hubConnection?.on("messageRespone", (message) => {
+    this.hubConnection?.on("groupsMessage", (message) => {
       this.lastMessage = message;
       console.log(message);
     })
   }
 
-  askServerListener()
+  public joinGroup(groupName: string)
+  {
+    this.hubConnection?.invoke("JoinGroup", groupName);
+  }
+
+  public sendMessage(messageInfo: any)
+  {
+    this.hubConnection?.invoke("SendMessageToGroup", messageInfo.groupName, messageInfo.message);
+  }
+
+  public askServerListener()
   {
     this.hubConnection?.on("askServerResponse", (sometext) => {
       console.log(sometext);
