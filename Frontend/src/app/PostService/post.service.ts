@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from '../IPost';
+import { Post } from '../Models/IPost';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -19,11 +19,9 @@ export class PostService {
     return this.http.get<Post[]>(this.postUrl);
   }
 
-  private postByIdUrl = environment.postUrl + "post";
-
   public GetPostById(id: number): Observable<Post>
   {
-    return this.http.get<Post>(`${this.postByIdUrl}/${id}`);
+    return this.http.get<Post>(`${this.postUrl}/${id}`);
   }
 
 }

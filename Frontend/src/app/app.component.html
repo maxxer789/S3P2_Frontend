@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
   <div class="container-fluid">
+    <button mat-icon-button color="accent" (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
     <a class="navbar-brand">
       TUBECORD
     </a>
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link active" routerLink="">Home</a>
         </li>
@@ -14,15 +17,24 @@
         <li class="nav-item">
           <a class="nav-link active" routerLink="">Upload</a>
         </li>
-        <li class="nav-item">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Search</button>
-          </form>
-        </li>
       </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
-
-<router-outlet></router-outlet>
+<ng-sidebar-container>
+  <ng-sidebar [opened]="sidebarOpened">
+    <mat-divider></mat-divider>
+    <ul class="menu">
+      <li><a routerLink="/">home</a></li>
+      <li><a routerLink="group/1">Group 1</a></li>
+      <mat-divider></mat-divider>
+    </ul>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <router-outlet></router-outlet>
+  </div>
+</ng-sidebar-container>

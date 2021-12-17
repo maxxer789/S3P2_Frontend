@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: PostComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'detail/:id', component: PostDetailComponent },
+  { path: 'details/:id', component: PostDetailComponent },
   { path: 'group/:id', component: MessagingComponent},
 ];
 

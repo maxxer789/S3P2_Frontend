@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SignalRService } from './SignalR/signal-r.service';
-import { MessagingComponent } from './messaging/messaging.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +7,13 @@ import { MessagingComponent } from './messaging/messaging.component';
 })
 export class AppComponent{
 
-  title = 'Frontend';
+  public sidebarOpened: boolean = false;
 
-  constructor(
-    public signalRService:SignalRService
-  ){}
+  public toggleSidebar()
+  {
+    this.sidebarOpened = !this.sidebarOpened;
+  }
+
+  constructor(){}
 
 }

@@ -2,3 +2,13 @@ a{
     text-decoration: none;
     color:black;
 }
+
+.card{
+    width: 350px;
+    background-color: inherit;
+    border: none;
+}
+
+.card-body{
+    color:whitesmoke;
+}

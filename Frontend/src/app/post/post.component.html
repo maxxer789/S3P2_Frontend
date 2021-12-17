@@ -1,16 +1,16 @@
-<div class="album py-5 bg-light">
-    <div *ngIf="Posts.length > 0; else elseBlock" class="container">
-        <div class="row">
-            <div *ngFor="let post of Posts" class="col-lg-3 mb-5">
-                <a routerLink="/detail/{{post.id}}">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img" width="100%" height="200" src="https://picsum.photos/200/300"/>
-                        <div class="card-body">
+<div class="album py-5">
+    <div *ngIf="Posts.length > 0; else elseBlock" class="container-fluid">
+        <div class="row row-cols-auto">
+            <div *ngFor="let post of Posts" class="col mb-5">
+                <div class="card">
+                    <a routerLink="/details/{{post.id}}">
+                        <img class="bd-placeholder-img" width="100%" height="250" src="https://picsum.photos/200/300"/>
+                        <div class="card-body text-center">
                             <h5>{{post.title}}</h5>
                             <p>{{post.description}}</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
