@@ -25,12 +25,13 @@ export class GroupOverviewComponent implements OnInit {
     this.groupService.getGroup(this.group)
     .subscribe(group => {
       this.group = group;
+
       if(group.id == 0)
       {
         this.router.navigate(["home"])
       }
+
     },err =>{
-      console.log(err);
       this.router.navigate(["home"])
     })
   }

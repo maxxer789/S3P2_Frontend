@@ -1,6 +1,8 @@
+import { Message } from "./IMessage";
+
 export interface Group
 {
     id: number;
     groupName: string;
-    messages: string[];
+    messages: Message[];
 }

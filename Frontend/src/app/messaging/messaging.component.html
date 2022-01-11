@@ -1,9 +1,14 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-8  my-3 bg-dark border pre-scrollable border-dark" style="height: 90vh;">
-            <div *ngFor="">
-
+            <div *ngIf="group.messages else elseBlock">
+                <div *ngFor="let message of group.messages" class="message">
+                    {{message.text}}
+                </div>
             </div>
+            <ng-template #elseBlock>
+                <div class="loading">loading messages...</div>
+            </ng-template>
         </div>
     </div>
     <div class="row justify-content-center">
