@@ -14,6 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule} from '@angular/material/tabs'
+import { JwtModule } from '@auth0/angular-jwt';
+import { GroupOverviewComponent } from './group-overview/group-overview.component';
+import { GroupCreationComponent } from './group-creation/group-creation.component';
+import { GroupSettingsComponent } from './group-settings/group-settings.component';
+
+export function tokenGetter(){
+  return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -22,6 +31,9 @@ import { MatDividerModule } from '@angular/material/divider';
     PostDetailComponent,
     MessagingComponent,
     LoginComponent,
+    GroupOverviewComponent,
+    GroupCreationComponent,
+    GroupSettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,10 +42,19 @@ import { MatDividerModule } from '@angular/material/divider';
     NgbModule,
     FormsModule,
     SidebarModule.forRoot(),
+    JwtModule.forRoot({
+      config:
+      {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:5001"],
+        disallowedRoutes: []
+      }
+    }),
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AccountService } from '../Account.service';
+import { AccountService } from '../AccountService/Account.service';
 
 @Component({
   selector: 'app-login',
@@ -22,13 +22,12 @@ export class LoginComponent {
     this.accountService.login(credentials.username, credentials.password)
       .subscribe(response => 
       {
-        const token = (<any>response).tokenString;
+        const token = (<any>response).token;
         localStorage.setItem("jwt", token);
         this.invalidLogin = false;
         this.router.navigate(["/"]);
       }, err => 
       {
-        console.log(err); 
         this.invalidLogin = true;
       })
   }

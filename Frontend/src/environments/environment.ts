@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   postUrl: "http://localhost:5000/",
-  accountUrl: "https://localhost:5001/Accounts/"
+  accountUrl: "https://localhost:5001/Accounts/",
+  groupUrl: "https://localhost:5002/Groups/"
 };
 
 /*

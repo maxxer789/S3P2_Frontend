@@ -14,7 +14,6 @@ export class AccountService {
 
   public login(username: string, password: string): Observable<string>
   {
-    console.log(username, password);
     return this.http.post<string>(this.loginUrl, {username, password});
   }
 

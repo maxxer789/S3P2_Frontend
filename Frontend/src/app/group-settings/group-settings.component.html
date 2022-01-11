@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form class="form-group w-100 p-1" #editGroupForm="ngForm" (ngSubmit)="editGroup(editGroupForm)">
+                <input type="hidden" name="groupId" value="groupId"/>
+                <div class="my-4">
+                    <label for="groupName"><h5> Change the groups name</h5></label>
+                    <input type="text" class="form-control" name="groupName" ngModel id="groupName" required placeholder="Enter new group name">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <form class="form-group w-100 p-1" #deleteGroupForm="ngForm" (ngSubmit)="deleteGroup(deleteGroupForm)">
+                <input type="hidden" name="groupId" value="groupId"/>
+                <button class="btn btn-lg btn-danger btn-block" type="submit">Delete group</button>
+            </form>
+        </div>
+    </div>
+</div>

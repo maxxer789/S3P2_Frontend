@@ -1,22 +1,22 @@
-<div class="bg-primary">
-    {{signalRService.lastMessage}}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-8  my-3 bg-dark border pre-scrollable border-dark" style="height: 90vh;">
+            <div *ngFor="">
+
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8 p-1">
+            <form #sendMessageForm="ngForm" class="row w-100 m-0" (ngSubmit)="sendMessageToGroup(sendMessageForm)">
+                <div class="col-11">
+                    <input type="text" id="message" name="message" ngModel class="form-control" placeholder="text here">
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-<form class="form-signin" #groupForm="ngForm" (ngSubmit)="joinGroup(groupForm)">
-    <div class="container-fluid">
-        <label for="groupName" class="sr-only">GroupName</label>
-        <input type="text" id="groupName" name="groupName" ngModel class="form-control" placeholder="Group Name" required autofocus>
-        <br>
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </div>
-</form>
-<form class="form-signin" #sendMessageForm="ngForm" (ngSubmit)="sendMessageToGroup(sendMessageForm)">
-    <div class="container-fluid">
-        <label for="message" class="sr-only"></label>
-        <input type="text" id="message" name="message" ngModel class="form-control" placeholder="text here">
-        <br>
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </div>
-</form>
 

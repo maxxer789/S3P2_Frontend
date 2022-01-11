@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="py-4 col-12 bg-primary">
+            <h2 class="font-weight-bold text-center" >{{group.groupName}}</h2>
+        </div>
+        <div class="col-12">
+            <mat-tab-group mat-align-tabs="center" animationDuration="400ms">
+                <mat-tab label="Chat">
+                    <app-messaging></app-messaging>
+                </mat-tab>
+                <mat-tab label="Settings">
+                    <ng-template matTabContent>
+                        <app-group-settings [groupId]="group.id"></app-group-settings>
+                    </ng-template>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 ng-sidebar-container{
-    height: 100vh;
+    position:sticky;
+    height: 94vh;
 }
 
 ::ng-deep .ng-sidebar{
@@ -7,9 +8,6 @@ ng-sidebar-container{
     color: whitesmoke;
     width: 300px;
     box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
-}
-
-::ng-deep .ng-sidebar_content{
 }
 
 .menu{
