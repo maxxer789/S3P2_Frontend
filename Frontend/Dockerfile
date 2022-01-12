@@ -8,4 +8,5 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 RUN npm run build
-RUN npm start
+RUN chmod +X /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
