@@ -9,4 +9,3 @@ RUN npm install
 COPY . /app
 RUN npm run build
 RUN npm start
-ENTRYPOINT ["/app/entrypoint.sh"]
