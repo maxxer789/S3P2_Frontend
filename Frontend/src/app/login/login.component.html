@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <form class="form-signin" id="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="row justify-content-center mt-5">
             <h2 class="form-signin-heading">Login</h2>
         </div>
@@ -26,4 +26,11 @@
             </div>
         </div>
     </form>
+    <div class="row mt-1 justify-content-center">
+        <div class="col-5 d-flex justify-content-end">
+            <span for="register">Don't have an account yet? 
+                <a id="register" [routerLink]="['/register']">Register here</a>
+            </span>
+        </div>
+    </div>
 </div>
