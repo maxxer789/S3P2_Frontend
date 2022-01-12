@@ -12,7 +12,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  private postUrl = environment.postUrl + "posts";
+  private postUrl = environment.postUrl;
 
   public GetPosts(): Observable<Post[]>
   {
