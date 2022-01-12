@@ -6,7 +6,7 @@ import * as signalR from '@aspnet/signalr'
 })
 export class SignalRService {
 
-  lastMessage:string = "";
+  messages: string[] = [];
 
   constructor() { }
 
@@ -36,8 +36,8 @@ export class SignalRService {
   public addMessageListener()
   {
     this.hubConnection?.on("groupsMessage", (message) => {
-      this.lastMessage = message;
       console.log(message);
+      this.messages.push(message);
     })
   }
 
@@ -55,7 +55,6 @@ export class SignalRService {
   {
     this.hubConnection?.on("askServerResponse", (sometext) => {
       console.log(sometext);
-      this.lastMessage = sometext;
     })
   }
 }

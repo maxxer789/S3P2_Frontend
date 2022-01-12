@@ -29,6 +29,7 @@ export class MessagingComponent implements OnInit, OnDestroy {
         this.signalRService.addMessageListener();
         this.signalRService.askServerListener();
         this.signalRService.askServer();
+        this.joinGroup();
       }, 2000);
     }
 

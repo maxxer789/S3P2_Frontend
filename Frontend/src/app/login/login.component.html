@@ -1,19 +1,29 @@
-<form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-    <div class="container-fluid">
-        <div class="row w-75">
+<div class="container-fluid">
+    <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="row justify-content-center mt-5">
             <h2 class="form-signin-heading">Login</h2>
-            <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div>
-            <br>
-
-            <label for="username" class="sr-only">Username</label>
-            <input type="text" id="username" name="username" ngModel class="form-control" placeholder="UserName" required autofocus>
-            <br>
-
-            <label for="password" class="sr-only"></label>
-            <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password" required>
-            <br>
-            
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </div>
-    </div>
-</form>
+        <div class="row my-2 justify-content-center">
+            <div class="col-5">
+                <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div>
+            </div>
+        </div>
+        <div class="row my-2 justify-content-center">
+            <div class="col-5">
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" id="username" name="username" ngModel class="form-control" placeholder="UserName" required autofocus>
+            </div>
+        </div>
+        <div class="row my-2 justify-content-center">
+            <div class="col-5">
+                <label for="password" class="sr-only"></label>
+                <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password" required>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

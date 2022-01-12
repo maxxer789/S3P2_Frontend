@@ -5,6 +5,9 @@
                 <div *ngFor="let message of group.messages" class="message">
                     {{message.text}}
                 </div>
+                <div *ngFor="let message of signalRService.messages" class="message">
+                    {{message}}
+                </div>
             </div>
             <ng-template #elseBlock>
                 <div class="loading">loading messages...</div>
