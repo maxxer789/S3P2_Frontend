@@ -30,9 +30,16 @@
     <mat-divider></mat-divider>
     <ul class="menu">
       <li><a routerLink="/">home</a></li>
-      <li><a routerLink="group/1">Group 1</a></li>
+      <li><a routerLink="group/3">Group</a></li>
       <mat-divider></mat-divider>
       <li><a routerLink="group/create">Create Group</a></li>
+      <mat-divider></mat-divider>
+      <div *ngIf="loggedIn else elseBlock">
+        <li><button class="btn btn-danger w-75 ml-4 mt-3" (click)="logout()">Logout</button></li>
+      </div>
+      <ng-template #elseBlock>
+        <li><button class="btn btn-success w-75 ml-4 mt-3" [routerLink]="'login'">Log in</button></li>
+      </ng-template>
     </ul>
   </ng-sidebar>
   <div ng-sidebar-content>

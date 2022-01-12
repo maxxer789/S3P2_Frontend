@@ -19,6 +19,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { GroupOverviewComponent } from './group-overview/group-overview.component';
 import { GroupCreationComponent } from './group-creation/group-creation.component';
 import { GroupSettingsComponent } from './group-settings/group-settings.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 export function tokenGetter(){
   return localStorage.getItem("jwt");
@@ -34,6 +35,7 @@ export function tokenGetter(){
     GroupOverviewComponent,
     GroupCreationComponent,
     GroupSettingsComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

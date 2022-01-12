@@ -17,4 +17,11 @@ export class AccountService {
     return this.http.post<string>(this.loginUrl, {username, password});
   }
 
+  private registerUrl = environment.accountUrl + "Register"
+
+  public registrate(username: string, password: string): Observable<string>
+  {
+    return this.http.post<string>(this.registerUrl, {username, password});
+  }
+
 }
